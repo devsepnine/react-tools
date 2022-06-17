@@ -1,0 +1,8 @@
+.table-color_text {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+
+  &:first-child {
+    border-right: 1px solid black;
+  }
+}
