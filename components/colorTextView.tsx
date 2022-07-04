@@ -19,17 +19,17 @@ export default function ColorTextView({ colors }: any) {
     if (options.mode == modeList[3]) {
       const hsl = changeRGBtoHSL(changeHEXtoRGB(hex))
       return (
-        `${hex} | ${changeHEXtoRGB(hex)?.join(' ')} | ` +
-        (hsl ? `${hsl[0]} ${hsl[1]}% ${hsl[2]}%` : '')
+        `${hex} | ${changeHEXtoRGB(hex)?.join(', ')} | ` +
+        (hsl ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : '')
       )
     }
     if (options.mode == modeList[0]) {
       return hex
     } else if (options.mode == modeList[1]) {
-      return changeHEXtoRGB(hex)?.join(' ')
+      return changeHEXtoRGB(hex)?.join(', ')
     } else {
       const hsl = changeRGBtoHSL(changeHEXtoRGB(hex))
-      return hsl ? `${hsl[0]} ${hsl[1]}% ${hsl[2]}%` : ''
+      return hsl ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : ''
     }
   }
 

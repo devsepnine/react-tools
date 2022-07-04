@@ -3,6 +3,7 @@ import ToolsColor from '../../components/toolsColor'
 import InputColor from '../../components/inputColor'
 import { useState } from 'react'
 import ColorTextView from '../../components/colorTextView'
+import Link from 'next/link'
 
 const Color: NextPage = () => {
   const [colors, setColors] = useState([
@@ -59,7 +60,7 @@ const Color: NextPage = () => {
     {
       name: 'grey-06',
       light: '#dddddd',
-      dark: '#4c4c4c',
+      dark: '#333333',
     },
     {
       name: 'grey-07',
@@ -120,6 +121,9 @@ const Color: NextPage = () => {
   return (
     <>
       {/*{JSON.stringify(colors, null, 2)}*/}
+      <Link href={'http://localhost:3000/webtoon/detail/wt_000051046'}>
+        테스트 레퍼럴
+      </Link>
       <InputColor addColor={addColor}></InputColor>
       <ToolsColor colors={colors}></ToolsColor>
       <ColorTextView colors={colors}></ColorTextView>

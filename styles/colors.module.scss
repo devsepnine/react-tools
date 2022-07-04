@@ -1,16 +1,20 @@
 .list-color {
-  background-color: aqua;
-  text-align: center;
+  background-color: white;
+  text-align: left;
+  min-width: 550px;
 
   .color {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid hsl(0, 0%, 50%);
+
     &.title {
       padding: 10px 0;
       font-weight: bold;
       border-bottom: none;
     }
+
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: 100px 100px 99px 133px 133px;
+    column-gap: 5px;
     align-items: center;
 
     .color-title {
@@ -20,8 +24,8 @@
     .color-sample {
       width: 80px;
       height: 30px;
-      border: 1px solid black;
       margin: auto;
+      box-shadow: 1px 1px 5px hsla(0, 0%, 0%, .8);
     }
   }
 

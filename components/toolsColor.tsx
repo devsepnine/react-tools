@@ -4,11 +4,14 @@ import { changeHEXtoRGB, changeRGBtoHSL } from '../shared/ts/color'
 export default function ToolsColor({ colors }: any) {
   return (
     <>
+      <a href={'http://192.168.100.103:3000/webtoon/detail/asdlkj'}>
+        prod home
+      </a>
       <div className={'sample'}>
         <div className={styles['list-color']}>
           <div className={`${styles.color} ${styles.title}`}>
             <div>Name</div>
-            <div>Sample</div>
+            <div>Color</div>
             <div>HEX</div>
             <div>RGB</div>
             <div>HSL</div>
@@ -38,10 +41,10 @@ export default function ToolsColor({ colors }: any) {
               ></div>
               <div className={'color_hex'}>{color.dark}</div>
               <div className={'color_rgb'}>
-                {changeHEXtoRGB(color.dark)?.join(' ')}
+                {changeHEXtoRGB(color.dark)?.join('  ')}
               </div>
               <div className={'color_hsl'}>
-                {changeRGBtoHSL(changeHEXtoRGB(color.dark))?.join(' ')}
+                {changeRGBtoHSL(changeHEXtoRGB(color.dark))?.join('  ')}
               </div>
             </div>
           ))}
