@@ -103,9 +103,9 @@ const Color: NextPage = () => {
       dark: '#f57555',
     },
     {
-      name: 'cyan-01',
+      name: 'sub-cyan-01',
       light: '#00BCE4',
-      dark: '00BCE4',
+      dark: '#00BCE4',
     },
     {
       name: 'sub-blue-01',
