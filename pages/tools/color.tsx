@@ -126,9 +126,7 @@ const Color: NextPage = () => {
   return (
     <>
       {/*{JSON.stringify(colors, null, 2)}*/}
-      <Link href={'http://localhost:3000/webtoon/detail/wt_000051046'}>
-        테스트 레퍼럴
-      </Link>
+
       <InputColor addColor={addColor}></InputColor>
       <ToolsColor colors={colors}></ToolsColor>
       <ColorTextView colors={colors}></ColorTextView>
