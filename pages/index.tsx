@@ -1,25 +1,25 @@
 import type { NextPage } from 'next'
-import Sample from '../components/sample'
+// import Sample from '../components/sample'
 import { useState } from 'react'
-import axios from 'axios'
-import Image from 'next/image'
-import Link from 'next/link'
-import ToolsColor from '../components/toolsColor'
+// import axios from 'axios'
+// import Image from 'next/image'
+// import Link from 'next/link'
+// import ToolsColor from '../components/toolsColor'
 
-const Home: NextPage = ({ data }: any) => {
-  const [number, setNumber] = useState(0)
-  const [resData, setResData] = useState('hi')
-
-  const onIncraese = () => {
-    setNumber((pv) => pv + 1)
-  }
-  const onDecrease = () => {
-    setNumber((pv) => pv - 1)
-  }
-
-  const onResChange = (value: any) => {
-    setResData(value)
-  }
+const Home: NextPage = () => {
+  // const [number, setNumber] = useState(0)
+  // const [resData, setResData] = useState('hi')
+  //
+  // const onIncraese = () => {
+  //   setNumber((pv) => pv + 1)
+  // }
+  // const onDecrease = () => {
+  //   setNumber((pv) => pv - 1)
+  // }
+  //
+  // const onResChange = (value: any) => {
+  //   setResData(value)
+  // }
   return (
     <>
       <div>main page</div>
