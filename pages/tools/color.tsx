@@ -34,48 +34,78 @@ const Color: NextPage = () => {
     },
     {
       name: 'grey-01',
+      light: '#555555',
+      dark: '#9c9c9c',
+    },
+    {
+      name: 'grey-02',
       light: '#666666',
       dark: '#8c8c8c',
     },
     {
-      name: 'grey-02',
+      name: 'grey-03',
+      light: '#777777',
+      dark: '#8c8c8c',
+    },
+    {
+      name: 'grey-04',
       light: '#888888',
       dark: '#8c8c8c',
     },
     {
-      name: 'grey-03',
+      name: 'grey-05',
       light: '#999999',
       dark: '#6c6c6c',
     },
     {
-      name: 'grey-04',
+      name: 'grey-06',
       light: '#aaaaaa',
       dark: '#6c6c6c',
     },
     {
-      name: 'grey-05',
+      name: 'grey-07',
+      light: '#b8b8b8',
+      dark: '#6c6c6c',
+    },
+    {
+      name: 'grey-08',
       light: '#cccccc',
       dark: '#4c4c4c',
     },
     {
-      name: 'grey-06',
+      name: 'bright-01',
       light: '#dddddd',
       dark: '#333333',
     },
     {
-      name: 'grey-07',
+      name: 'bright-02',
+      light: '#e8e8e8',
+      dark: '#333333',
+    },
+    {
+      name: 'bright-03',
       light: '#eeeeee',
       dark: '#2c2c2c',
     },
     {
-      name: 'grey-08',
+      name: 'bright-04',
       light: '#f2f2f2',
       dark: '#2c2c2c',
     },
     {
-      name: 'grey-09',
+      name: 'bright-05',
       light: '#f5f5f5',
       dark: '#2c2c2c',
+    },
+    {
+      name: 'bright-06',
+      light: '#f7f7f7',
+      dark: '#252525',
+    },
+    {
+      name: 'bright-07',
+      light: '#fbfbfb',
+      dark: '#252525',
     },
     {
       name: 'blue-01',
