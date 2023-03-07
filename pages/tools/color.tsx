@@ -32,6 +32,11 @@ const Color: NextPage = () => {
       dark: '#1c1c1c',
     },
     {
+      name: 'mono-04-elevate',
+      light: '#ffffff',
+      dark: '#212121',
+    },
+    {
       name: 'grey-01',
       light: '#555555',
       dark: '#9c9c9c',
