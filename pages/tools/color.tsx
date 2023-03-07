@@ -3,7 +3,6 @@ import ToolsColor from '../../components/toolsColor'
 import InputColor from '../../components/inputColor'
 import { useState } from 'react'
 import ColorTextView from '../../components/colorTextView'
-import Link from 'next/link'
 
 const Color: NextPage = () => {
   const [colors, setColors] = useState([
@@ -64,7 +63,7 @@ const Color: NextPage = () => {
     },
     {
       name: 'grey-07',
-      light: '#b8b8b8',
+      light: '#bbbbbb',
       dark: '#6c6c6c',
     },
     {
@@ -105,58 +104,51 @@ const Color: NextPage = () => {
     {
       name: 'bright-07',
       light: '#fbfbfb',
-      dark: '#252525',
+      dark: '#1c1c1c',
     },
     {
       name: 'blue-01',
-      light: '#0d84ff',
-      dark: '#2078ff',
+      light: '#3464FE',
+      dark: '#3464FE',
     },
     {
       name: 'blue-02',
-      light: '#3196ff',
-      dark: '#408fff',
-    },
-    {
-      name: 'blue-03',
-      light: '#5699ff',
-      dark: '#408fff',
-    },
-    {
-      name: 'green-01',
-      light: '#56c271',
-      dark: '#56c271',
-    },
-    {
-      name: 'orange-01',
-      light: '#ff9830',
-      dark: '#f57555',
-    },
-    {
-      name: 'sub-cyan-01',
-      light: '#00BCE4',
-      dark: '#00BCE4',
+      light: '#5880FE',
+      dark: '#5880FE',
     },
     {
       name: 'sub-blue-01',
-      light: '#00aaff',
-      dark: '#408fff',
+      light: '#e5ecff',
+      dark: '#e5ecff',
+    },
+    {
+      name: 'green-01',
+      light: '#00AD90',
+      dark: '#00AD90',
+    },
+    {
+      name: 'sub-green-01',
+      light: '#00C7A6',
+      dark: '#00C7A6',
+    },
+    {
+      name: 'orange-01',
+      light: '#FB7F41',
+      dark: '#FB7F41',
     },
     {
       name: 'sub-red-01',
-      light: '#e65050',
-      dark: '#f04446',
+      light: '#F91949',
+      dark: '#F91949',
     },
   ])
 
-  const addColor = (color: any) => {
+  const addColor = (color: never) => {
     setColors([...colors, color])
   }
 
   return (
     <>
-      {/*{JSON.stringify(colors, null, 2)}*/}
-
       <InputColor addColor={addColor}></InputColor>
       <ToolsColor colors={colors}></ToolsColor>
       <ColorTextView colors={colors}></ColorTextView>

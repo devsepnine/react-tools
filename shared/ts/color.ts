@@ -14,10 +14,10 @@ export function changeRGBtoHSL(rgb: number[] | undefined) {
       : 4 + (r - g) / s
     : 0
   return [
-    Math.round(60 * h < 0 ? 60 * h + 360 : 60 * h),
-    Math.round(
-      100 * (s ? (l <= 0.5 ? s / (2 * l - s) : s / (2 - (2 * l - s))) : 0),
-    ),
+    (60 * h < 0 ? 60 * h + 360 : 60 * h).toFixed(2),
+    (
+      100 * (s ? (l <= 0.5 ? s / (2 * l - s) : s / (2 - (2 * l - s))) : 0)
+    ).toFixed(2),
     ((100 * (2 * l - s)) / 2).toFixed(2),
   ]
 }
@@ -29,12 +29,11 @@ export function changeHEXtoRGB(hex: string) {
   }
   const aRgbHex = hex.replace('#', '').match(/.{1,2}/g)
   if (aRgbHex != undefined) {
-    const aRgb = [
+    return [
       parseInt(aRgbHex[0], 16),
       parseInt(aRgbHex[1], 16),
       parseInt(aRgbHex[2], 16),
     ]
-    return aRgb
   }
   return
 }
