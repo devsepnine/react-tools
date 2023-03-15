@@ -1,7 +1,8 @@
-import styles from 'styles/colors.module.scss'
-import { changeHEXtoRGB, changeRGBtoHSL } from '../shared/ts/color'
+import styles from 'styles/colors.module.scss';
+import { changeHEXtoRGB, changeRGBtoHSL } from '../shared/ts/color';
+import { TcolorObject } from '../shared/type/color';
 
-export default function ToolsColor({ colors }: any) {
+export default function ToolsColor({ colors }: { colors: TcolorObject[] }) {
   return (
     <>
       <div className={'sample'}>
@@ -13,7 +14,7 @@ export default function ToolsColor({ colors }: any) {
             <div>RGB</div>
             <div>HSL</div>
           </div>
-          {colors.map((color: any, index: number) => (
+          {colors.map((color: TcolorObject, index: number) => (
             <div key={'color-' + index} className={styles['color']}>
               <div className={styles['color-title']}>{color.name}</div>
               <div className={styles['color-sample']}>
@@ -42,15 +43,15 @@ export default function ToolsColor({ colors }: any) {
               </div>
               <div className={'color_hex'}>{color.dark}</div>
               <div className={'color_rgb'}>
-                {changeHEXtoRGB(color.dark)?.join('  ')}
+                {changeHEXtoRGB(color.dark)?.join(' ')}
               </div>
               <div className={'color_hsl'}>
-                {changeRGBtoHSL(changeHEXtoRGB(color.dark))?.join('  ')}
+                {changeRGBtoHSL(changeHEXtoRGB(color.dark))?.join(' ')}
               </div>
             </div>
           ))}
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -1,11 +1,12 @@
-import { NextPage } from 'next'
-import ToolsColor from '../../components/toolsColor'
-import InputColor from '../../components/inputColor'
-import { useState } from 'react'
-import ColorTextView from '../../components/colorTextView'
+import { NextPage } from 'next';
+import ToolsColor from '../../components/toolsColor';
+import InputColor from '../../components/inputColor';
+import { useState } from 'react';
+import ColorTextView from '../../components/colorTextView';
+import { TcolorObject } from '../../shared/type/color';
 
 const Color: NextPage = () => {
-  const [colors, setColors] = useState([
+  const [colors, setColors] = useState<TcolorObject[]>([
     {
       name: 'main-txt',
       light: '#555555',
@@ -146,11 +147,11 @@ const Color: NextPage = () => {
       light: '#F91949',
       dark: '#F91949',
     },
-  ])
+  ]);
 
   const addColor = (color: never) => {
-    setColors([...colors, color])
-  }
+    setColors([...colors, color]);
+  };
 
   return (
     <>
@@ -158,6 +159,6 @@ const Color: NextPage = () => {
       <ToolsColor colors={colors}></ToolsColor>
       <ColorTextView colors={colors}></ColorTextView>
     </>
-  )
-}
-export default Color
+  );
+};
+export default Color;
