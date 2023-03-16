@@ -1,37 +1,37 @@
-import { Fragment, useState } from 'react'
-import styles from '/styles/colorTextView.module.scss'
-import { changeHEXtoRGB, changeRGBtoHSL } from '../shared/ts/color'
+import { Fragment, useState } from 'react';
+import styles from '/styles/colorTextView.module.scss';
+import { changeHEXtoRGB, changeRGBtoHSL } from '../shared/ts/color';
 
 export default function ColorTextView({ colors }: any) {
   const [options, setOptions] = useState({
     prefix: '--',
     mode: 'hex',
-  })
-  const modeList = ['hex', 'rgb', 'hsl', 'all']
+  });
+  const modeList = ['hex', 'rgb', 'hsl', 'all'];
 
   const onChangeOptions = (e: any) => {
     setOptions((prevState) => {
-      return { ...prevState, [e.target.name]: e.target.value }
-    })
-  }
+      return { ...prevState, [e.target.name]: e.target.value };
+    });
+  };
 
   const viewColor = (hex: string) => {
     if (options.mode == modeList[3]) {
-      const hsl = changeRGBtoHSL(changeHEXtoRGB(hex))
+      const hsl = changeRGBtoHSL(changeHEXtoRGB(hex));
       return (
         `${hex} | ${changeHEXtoRGB(hex)?.join(', ')} | ` +
         (hsl ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : '')
-      )
+      );
     }
     if (options.mode == modeList[0]) {
-      return hex
+      return hex;
     } else if (options.mode == modeList[1]) {
-      return changeHEXtoRGB(hex)?.join(', ')
+      return changeHEXtoRGB(hex)?.join(', ');
     } else {
-      const hsl = changeRGBtoHSL(changeHEXtoRGB(hex))
-      return hsl ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : ''
+      const hsl = changeRGBtoHSL(changeHEXtoRGB(hex));
+      return hsl ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : '';
     }
-  }
+  };
 
   return (
     <>
@@ -72,5 +72,5 @@ export default function ColorTextView({ colors }: any) {
         </div>
       </div>
     </>
-  )
+  );
 }

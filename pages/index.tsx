@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 // import Sample from '../components/sample'
-import { useState } from 'react'
+// import { useState } from 'react';
 // import axios from 'axios'
 // import Image from 'next/image'
 // import Link from 'next/link'
@@ -24,8 +24,8 @@ const Home: NextPage = () => {
     <>
       <div>main page</div>
     </>
-  )
-}
+  );
+};
 
 // Home.getInitialProps = async () => {
 //   const res = await axios.post(
@@ -45,4 +45,4 @@ const Home: NextPage = () => {
 //   }
 // }
 
-export default Home
+export default Home;

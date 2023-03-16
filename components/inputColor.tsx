@@ -1,17 +1,17 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function InputColor(props: any) {
   const [newColor, setNewColor] = useState({
     lightColor: '',
     darkColor: '',
     name: '',
-  })
+  });
 
   const onChangeColor = (e: any) => {
     setNewColor((prevState) => {
-      return { ...prevState, [e.target.name]: e.target.value }
-    })
-  }
+      return { ...prevState, [e.target.name]: e.target.value };
+    });
+  };
 
   return (
     <>
@@ -40,12 +40,12 @@ export default function InputColor(props: any) {
               name: newColor.name,
               light: newColor.lightColor,
               dark: newColor.darkColor,
-            })
+            });
           }}
         >
           add
         </button>
       </div>
     </>
-  )
+  );
 }
