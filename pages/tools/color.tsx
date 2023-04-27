@@ -38,6 +38,11 @@ const Color: NextPage = () => {
       dark: '#212121',
     },
     {
+      name: 'grey-00',
+      light: '#444444',
+      dark: '#9c9c9c',
+    },
+    {
       name: 'grey-01',
       light: '#555555',
       dark: '#9c9c9c',
@@ -115,37 +120,37 @@ const Color: NextPage = () => {
     {
       name: 'blue-01',
       light: '#3464FE',
-      dark: '#3464FE',
+      dark: '#426fff',
     },
     {
       name: 'blue-02',
       light: '#5880FE',
-      dark: '#5880FE',
+      dark: '#496edf',
     },
     {
       name: 'sub-blue-01',
       light: '#e5ecff',
-      dark: '#e5ecff',
+      dark: '#426fff',
     },
     {
       name: 'green-01',
       light: '#00AD90',
-      dark: '#00AD90',
+      dark: '#018a73',
     },
     {
       name: 'sub-green-01',
       light: '#00C7A6',
-      dark: '#00C7A6',
+      dark: '#00b496',
     },
     {
       name: 'orange-01',
       light: '#FB7F41',
-      dark: '#FB7F41',
+      dark: '#dc6c34',
     },
     {
       name: 'sub-red-01',
       light: '#F91949',
-      dark: '#F91949',
+      dark: '#c31339',
     },
   ]);
 
