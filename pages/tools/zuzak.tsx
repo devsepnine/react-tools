@@ -16,7 +16,6 @@ const Zuzak = () => {
   const handleBtn = () => {
     html2canvas(document.getElementById('zuzak') as HTMLElement).then(
       (canvas) => {
-        document.body.appendChild(canvas);
         onSaveAs(canvas.toDataURL('image/png'), 'download.png');
       },
     );
