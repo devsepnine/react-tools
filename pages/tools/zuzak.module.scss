@@ -2,19 +2,24 @@
   position: relative;
   width: 1440px;
   height: 648px;
+
   .text__base {
+    overflow: hidden;
+    max-width: 247px;
     color: black;
     font-size: 34px;
-    letter-spacing: -0.5px;
-    font-weight: 500;
+    letter-spacing: -0.2px;
+    font-weight: 700;
     font-family: 'Roboto', serif;
   }
+
   .text__lat {
     position: absolute;
     top: 297px;
-    left: 348px;
+    left: 346px;
     width: 248px;
   }
+
   .blind__lat {
     position: absolute;
     top: 297px;
@@ -23,4 +28,84 @@
     height: 34px;
     background-color: rgb(204, 204, 204);
   }
+
+  .text__lng {
+    position: absolute;
+    top: 347px;
+    left: 346px;
+    width: 248px;
+  }
+
+  .text__msl{
+    position: absolute;
+    top: 399px;
+    left: 191px;
+    width: 248px;
+    text-align: right;
+  }
+
+  .text__right {
+    overflow: hidden;
+    position: absolute;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Roboto', serif;
+  }
+
+  .text__azimuth {
+    top: 184px;
+    left: 1023px;
+    width: 300px;
+    color: black;
+  }
+
+  .text__tilt {
+    top: 280px;
+    left: 1022px;
+    width: 300px;
+    color: black;
+  }
+
+  .text__roll {
+    top: 375px;
+    left: 1022px;
+    width: 300px;
+    color: black;
+  }
+
+  .text__date {
+    position: absolute;
+    top: 466px;
+    left: 152px;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    color: #818181;
+    font-family: 'Roboto', serif;
+  }
+
+  .text__ms {
+    margin-left: 1px;
+    font-size: 28px;
+    color: #919191;
+    font-family: 'Roboto', serif;
+  }
+
+  .button__screenshot {
+    position: absolute;
+    top: 12px;
+    left: 1070px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: transparent;
+    outline: transparent;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+.wrapper__input {
+  margin-top: 20px;
 }
