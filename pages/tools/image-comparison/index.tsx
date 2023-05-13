@@ -39,12 +39,12 @@ const ImageComparison = () => {
   );
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', resizeEvent);
     setPosition({
       x: window.innerWidth / 2,
     });
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', resizeEvent);
     };
   }, []);
 
@@ -55,6 +55,12 @@ const ImageComparison = () => {
     handleResize();
   }, [position]);
 
+  const resizeEvent = () => {
+    setPosition({
+      x: window.innerWidth / 2,
+    });
+    handleResize();
+  };
   const handleResize = () => {
     const layerbr = layerRef.current?.getBoundingClientRect();
     const barRef = line.current?.getBoundingClientRect();
