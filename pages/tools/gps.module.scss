@@ -1,7 +1,14 @@
-.wrapper__zuzak {
+.wrapper__gps {
   position: relative;
   width: 1440px;
   height: 648px;
+
+  .image__gps {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
 
   .text__base {
     overflow: hidden;
@@ -11,6 +18,7 @@
     letter-spacing: -0.2px;
     font-weight: 700;
     font-family: 'Roboto', serif;
+    z-index: 11;
   }
 
   .text__lat {
@@ -36,7 +44,7 @@
     width: 248px;
   }
 
-  .text__msl{
+  .text__msl {
     position: absolute;
     top: 399px;
     left: 191px;
@@ -51,6 +59,7 @@
     font-weight: bold;
     text-align: center;
     font-family: 'Roboto', serif;
+    z-index: 11;
   }
 
   .text__azimuth {
@@ -83,6 +92,7 @@
     letter-spacing: -0.1px;
     color: #818181;
     font-family: 'Roboto', serif;
+    z-index: 11;
   }
 
   .text__ms {
@@ -103,6 +113,26 @@
     outline: transparent;
     box-shadow: none;
     border: none;
+  }
+
+  .block__battery {
+    position: absolute;
+    top: 583px;
+    left: 273px;
+    width: 51.5px;
+    height: 38px;
+    background-color: black;
+    z-index: 9;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--percent);
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 255, 1, 1) 0%, rgba(0, 255, 1, 1) var(--bgPercent), rgba(0, 0, 0, 1) 100%);
+    }
   }
 }
 
