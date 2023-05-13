@@ -1,6 +1,8 @@
 import {
   CSSProperties,
   MouseEvent,
+  SyntheticEvent,
+  TouchEvent,
   useCallback,
   useEffect,
   useMemo,
@@ -22,14 +24,18 @@ const ImageComparison = () => {
   const [layerInfo, setLayerInfo] = useState({ width: 0, height: 0 });
 
   const onMouseMove = useCallback(
-    (event: MouseEvent) => {
+    (event: SyntheticEvent) => {
       if (pressed) {
+        const clientX =
+          event.type === 'touchmove'
+            ? (event as TouchEvent).targetTouches[0].clientX
+            : (event as MouseEvent).clientX;
         setPosition({
-          x: position.x + event.movementX,
+          x: clientX,
         });
       }
     },
-    [position.x, pressed],
+    [pressed],
   );
 
   useEffect(() => {
@@ -79,6 +85,8 @@ const ImageComparison = () => {
         className={styles['image-box']}
         style={cropStyle}
         onMouseMove={onMouseMove}
+        onTouchMove={onMouseMove}
+        onTouchEnd={() => setPressed(false)}
         onMouseLeave={() => setPressed(false)}
         onMouseUp={() => setPressed(false)}
       >
@@ -104,7 +112,9 @@ const ImageComparison = () => {
           ref={line}
           className={styles['line']}
           onMouseDown={() => setPressed(true)}
+          onTouchStart={() => setPressed(true)}
           onMouseUp={() => setPressed(false)}
+          onTouchEnd={() => setPressed(false)}
         >
           <span>{'<->'}</span>
         </div>
