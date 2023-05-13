@@ -113,6 +113,7 @@
     outline: transparent;
     box-shadow: none;
     border: none;
+    z-index: 11;
   }
 
   .block__battery {
@@ -131,11 +132,21 @@
       left: 0;
       width: var(--percent);
       height: 100%;
-      background: linear-gradient(90deg, rgba(0, 255, 1, 1) 0%, rgba(0, 255, 1, 1) var(--bgPercent), rgba(0, 0, 0, 1) 100%);
+      background: linear-gradient(90deg, rgba(0, 255, 1, 1) 0%, rgba(0, 255, 1, 1) calc(var(--bgPercent) - 1px), rgba(0, 255, 1, 0.8) var(--bgPercent), rgba(0, 0, 0, 0.3) 100%);
     }
   }
 }
 
 .wrapper__input {
   margin-top: 20px;
+
+  > div {
+    display: grid;
+    grid-template-columns: 120px 200px;
+
+    > div {
+      text-align: right;
+      padding-right: 30px;
+    }
+  }
 }

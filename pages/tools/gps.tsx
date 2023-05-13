@@ -1,7 +1,7 @@
+import { CSSProperties, useMemo, useState } from 'react';
 import gpsImg from '../../public/static/images/gps.png';
 import styles from './gps.module.scss';
 import Image from 'next/image';
-import { CSSProperties, useMemo, useState } from 'react';
 import html2canvas from 'html2canvas';
 
 const Gps = () => {
@@ -34,7 +34,7 @@ const Gps = () => {
   const batteryStyle = useMemo(() => {
     return {
       '--percent': `${battery}%`,
-      '--bgPercent': battery === 100 ? '100%' : `90%`,
+      '--bgPercent': battery === 100 ? '100%' : `95%`,
     };
   }, [battery]) as CSSProperties;
   return (
@@ -81,53 +81,80 @@ const Gps = () => {
           <div className={styles['block__battery']} style={batteryStyle}></div>
         </div>
         <div className={styles['wrapper__input']}>
-          <input
-            type={'text'}
-            value={lat}
-            onChange={(e) => setLat(e.target.value)}
-          />
-          <input
-            type={'text'}
-            value={lng}
-            onChange={(e) => setLng(e.target.value)}
-          />
-          <input
-            type={'text'}
-            value={msl}
-            onChange={(e) => setMsl(e.target.value)}
-          />
-          <input
-            type={'text'}
-            value={azimuth}
-            onChange={(e) => setAzimuth(e.target.value)}
-          />
-          <input
-            type={'text'}
-            value={tilt}
-            onChange={(e) => setTilt(e.target.value)}
-          />
-          <input
-            type={'text'}
-            value={roll}
-            onChange={(e) => setRoll(e.target.value)}
-          />
-          <input
-            type={'text'}
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-          <input
-            type={'text'}
-            value={ms}
-            onChange={(e) => setMs(e.target.value)}
-          />
-          <input
-            type={'range'}
-            min={0}
-            max={100}
-            value={battery}
-            onChange={(e) => setBattery(Number(e.target.value))}
-          />
+          <div>
+            <div>LAT :</div>
+            <input
+              type={'text'}
+              value={lat}
+              onChange={(e) => setLat(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>LNG :</div>
+            <input
+              type={'text'}
+              value={lng}
+              onChange={(e) => setLng(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>MSL :</div>
+            <input
+              type={'text'}
+              value={msl}
+              onChange={(e) => setMsl(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>AZIMUTH :</div>
+            <input
+              type={'text'}
+              value={azimuth}
+              onChange={(e) => setAzimuth(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>TILT :</div>
+            <input
+              type={'text'}
+              value={tilt}
+              onChange={(e) => setTilt(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>ROLL :</div>
+            <input
+              type={'text'}
+              value={roll}
+              onChange={(e) => setRoll(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>DATE :</div>
+            <input
+              type={'text'}
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>MS :</div>
+            <input
+              type={'text'}
+              value={ms}
+              onChange={(e) => setMs(e.target.value)}
+            />
+          </div>
+          <div>
+            <div>BATTERY:</div>
+            <input
+              type={'range'}
+              min={0}
+              max={100}
+              value={battery}
+              onChange={(e) => setBattery(Number(e.target.value))}
+            />
+          </div>
         </div>
       </div>
     </>
