@@ -1,5 +1,6 @@
 import {
   CSSProperties,
+  MouseEvent,
   useCallback,
   useEffect,
   useMemo,
@@ -21,7 +22,7 @@ const ImageComparison = () => {
   const [layerInfo, setLayerInfo] = useState({ width: 0, height: 0 });
 
   const onMouseMove = useCallback(
-    (event: any) => {
+    (event: MouseEvent) => {
       if (pressed) {
         setPosition({
           x: position.x + event.movementX,
@@ -61,8 +62,8 @@ const ImageComparison = () => {
   };
   const cropStyle = useMemo(() => {
     return {
-      '--clip1': `0, ${layerInfo.width}px, ${layerInfo.height}px, ${width1}px`,
-      '--clip2': `0, ${width1}px, ${layerInfo.height}px, 0`,
+      '--clip1': `rect(0, ${layerInfo.width}px, ${layerInfo.height}px, ${width1}px)`,
+      '--clip2': `rect(0, ${width1}px, ${layerInfo.height}px, 0)`,
     };
   }, [width1, layerInfo.width, layerInfo.height]) as CSSProperties;
   return (
@@ -81,18 +82,18 @@ const ImageComparison = () => {
         onMouseLeave={() => setPressed(false)}
         onMouseUp={() => setPressed(false)}
       >
-        <div className={styles['box__twitch-image']}>
+        <div className={styles['box__clip1-image']}>
           <Image
-            src={twitchImage}
+            src={youtubeImage}
             alt="twitch"
             width={2843}
             height={1600}
             quality={100}
           />
         </div>
-        <div className={styles['box__youtube-image']}>
+        <div className={styles['box__clip2-image']}>
           <Image
-            src={youtubeImage}
+            src={twitchImage}
             alt="youtube"
             width={2843}
             height={1600}

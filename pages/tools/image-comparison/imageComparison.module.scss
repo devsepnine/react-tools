@@ -4,25 +4,26 @@
   padding-top: 56.27857%;
   width: 100%;
   height: auto;
+  user-select: none;
 
-  .box__twitch-image {
+  .box__clip1-image {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     height: auto;
-    clip: rect(var(--clip1));
+    clip: var(--clip1);
   }
 
-  .box__youtube-image {
+  .box__clip2-image {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     height: auto;
-    clip: rect(var(--clip2));
+    clip: var(--clip2);
   }
 
   .line {
