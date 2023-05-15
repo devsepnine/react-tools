@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "HOST=0.0.0.0 PORT=9000 next dev",
     "build": "next build",
     "start": "HOST=0.0.0.0 PORT=9000 next start",
     "lint": "next lint"
@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "html2canvas": "^1.4.1",
-    "next": "12.1.6",
+    "next": "12.2.4",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "sass": "^1.51.0"

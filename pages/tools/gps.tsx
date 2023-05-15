@@ -1,7 +1,5 @@
 import { CSSProperties, useMemo, useState } from 'react';
-import gpsImg from '../../public/static/images/gps.png';
 import styles from './gps.module.scss';
-import Image from 'next/image';
 import html2canvas from 'html2canvas';
 
 const Gps = () => {
@@ -15,11 +13,21 @@ const Gps = () => {
   const [roll, setRoll] = useState('0.27');
   const [battery, setBattery] = useState(100);
   const handleBtn = () => {
-    html2canvas(document.getElementById('gps') as HTMLElement).then(
-      (canvas) => {
-        onSaveAs(canvas.toDataURL('image/png'), 'download.png');
-      },
-    );
+    const element = document.getElementById('gps') as HTMLElement;
+    html2canvas(element, {
+      allowTaint: true,
+      removeContainer: true,
+      backgroundColor: null,
+      imageTimeout: 15000,
+      logging: true,
+      scale: 1,
+      useCORS: true,
+      windowWidth: element.scrollWidth,
+      windowHeight: element.scrollHeight,
+    }).then((canvas) => {
+      onSaveAs(canvas.toDataURL('image/png'), 'download.png');
+      // document.body.appendChild(canvas);
+    });
   };
 
   const onSaveAs = (uri: string, filename: string) => {
@@ -41,12 +49,10 @@ const Gps = () => {
     <>
       <div>
         <div id={'gps'} className={styles['wrapper__gps']}>
-          <Image
-            src={gpsImg}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={'/static/images/gps.png'}
             alt="gps"
-            width={1440}
-            height={648}
-            quality={100}
             className={styles['image__gps']}
           />
           <button
