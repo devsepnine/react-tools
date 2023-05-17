@@ -1,7 +1,14 @@
 import { CSSProperties, useMemo, useState } from 'react';
 import styles from './gps.module.scss';
 import html2canvas from 'html2canvas';
+import { GetServerSidePropsContext } from 'next';
 
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  console.log('join ip : ', context.req.socket.remoteAddress);
+  return {
+    props: {},
+  };
+}
 const Gps = () => {
   const [lat, setLat] = useState('36.2978539');
   const [lng, setLng] = useState('139.9879522');
