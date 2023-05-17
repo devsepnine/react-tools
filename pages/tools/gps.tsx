@@ -6,6 +6,7 @@ import { GetServerSidePropsContext } from 'next';
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const forwarded = context.req.headers['x-forwarded-for'] || '';
   if (typeof forwarded === 'string') {
+    console.log('time : ', new Date().toLocaleString());
     console.log('join ip : ', forwarded.split(',')[0]);
   }
   return {
