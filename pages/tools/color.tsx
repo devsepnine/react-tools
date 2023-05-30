@@ -8,8 +8,8 @@ import { TcolorObject } from '../../shared/type/color';
 const Color: NextPage = () => {
   const [colors, setColors] = useState<TcolorObject[]>([
     {
-      name: 'main-txt',
-      light: '#555555',
+      name: 'mono-00',
+      light: '#000000',
       dark: '#ffffff',
     },
     {
